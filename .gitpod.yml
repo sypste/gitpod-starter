@@ -1,4 +1,8 @@
 vscode:
   extensions:
-    - "ms-azuretools.vscode-azurefunctions"
     - "eamodio.gitlens"
+    - "amazonwebservices.aws-toolkit-vscode"
+    - "ms-python.python"
+    - "ms-python.anaconda-extension-pack"
+    - "golang.Go"
+    - "ms-kubernetes-tools.vscode-kubernetes-tools"
