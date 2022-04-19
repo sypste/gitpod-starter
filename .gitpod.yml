@@ -1,13 +1,25 @@
-image: gitpod/workspace-full
+# Syntax reference for .gitpod.yml https://www.gitpod.io/docs/references/gitpod-yml
 
+# Choose useful base image https://www.gitpod.io/docs/references/gitpod-yml#image
+image: gitpod/workspace-full
+# ... or build your own https://www.gitpod.io/docs/references/gitpod-yml#imagefile
+# image.file: <empty>
+
+# Custom git config
 gitConfig:
-  alias.st: status
   alias.cm: commit -m
+  alias.st: status
 
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: echo 'init script' # runs during prebuild
-    command: echo 'start script'
+  - name: Install kubectl
+    init: |
+      sudo apt-get update
+      sudo apt-get install -y apt-transport-https ca-certificates curl
+      sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+      sudo apt-get update
+      sudo apt-get install -y kubectl
 
 vscode:
   extensions:
@@ -15,17 +27,16 @@ vscode:
     - eamodio.gitlens
     - hashicorp.terraform
     # aws
-    # - amazonwebservices.aws-toolkit-vscode
+    - amazonwebservices.aws-toolkit-vscode
     # azure
-    # - ms-azuretools.vscode-docker
+    - ms-azuretools.vscode-docker
     # gcp
-    # - googlecloudtools.cloudcode
     # python
-    # - ms-python.python
-    # - ms-python.anaconda-extension-pack
+    - ms-python.python
+    - ms-python.anaconda-extension-pack
     # golang
-    # - golang.Go
+    - golang.Go
     # java
-    # - vscjava.vscode-java-pack
+    - vscjava.vscode-java-pack
     # container
-    # - ms-kubernetes-tools.vscode-kubernetes-tools
+    - ms-kubernetes-tools.vscode-kubernetes-tools
