@@ -1,10 +1,31 @@
+image: gitpod/workspace-full
+
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - init: echo 'init script' # runs during prebuild
+    command: echo 'start script'
+
 vscode:
   extensions:
+    # basic extensions
     - eamodio.gitlens
-    - amazonwebservices.aws-toolkit-vscode
-    - ms-python.python
-    - ms-python.anaconda-extension-pack
-    - golang.Go
-    - ms-azuretools.vscode-docker
-    - ms-kubernetes-tools.vscode-kubernetes-tools
     - hashicorp.terraform
+    # aws
+    # - amazonwebservices.aws-toolkit-vscode
+    # azure
+    # - ms-azuretools.vscode-docker
+    # gcp
+    # - googlecloudtools.cloudcode
+    # python
+    # - ms-python.python
+    # - ms-python.anaconda-extension-pack
+    # golang
+    # - golang.Go
+    # java
+    # - vscjava.vscode-java-pack
+    # container
+    # - ms-kubernetes-tools.vscode-kubernetes-tools
+
+gitConfig:
+  alias.st: status
+  alias.cm: commit -m
