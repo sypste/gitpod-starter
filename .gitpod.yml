@@ -1,3 +1,4 @@
+---
 # Syntax reference for .gitpod.yml https://www.gitpod.io/docs/references/gitpod-yml
 
 # Choose useful base image https://www.gitpod.io/docs/references/gitpod-yml#image
@@ -34,18 +35,22 @@ vscode:
   extensions:
     # basic extensions
     - eamodio.gitlens
+    # container
+    - ms-azuretools.vscode-docker
+    - ms-kubernetes-tools.vscode-kubernetes-tools
+    # cloud
     - hashicorp.terraform
     # aws
-    - amazonwebservices.aws-toolkit-vscode
+    # - amazonwebservices.aws-toolkit-vscode
     # azure
-    - ms-azuretools.vscode-docker
+    # - ms-vscode.azure-account
+    # - ms-azuretools.vscode-azurefunctions
     # gcp
     # python
-    - ms-python.python
-    - ms-python.anaconda-extension-pack
+    # - ms-python.python
+    # - ms-python.anaconda-extension-pack
     # golang
-    - golang.Go
+    # - golang.Go
     # java
-    - vscjava.vscode-java-pack
-    # container
-    - ms-kubernetes-tools.vscode-kubernetes-tools
+    # - vscjava.vscode-java-pack
+    # - Pivotal.vscode-boot-dev-pack
